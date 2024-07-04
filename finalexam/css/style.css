@@ -1,0 +1,102 @@
+/* Global styles */
+body {
+    background-color: plum;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Login and Register container styles */
+.login-container,
+.register-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: pink;
+    border: 2px solid purple;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-container h2,
+.register-container h2 {
+    color: purple;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: purple;
+}
+
+.input-group input {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 2px solid purple;
+    border-radius: 5px;
+    background-color: palevioletred;
+    color: purple;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-login,
+.btn-register {
+    background-color: purple;
+    color: pink;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    background-color: pink;
+    color: purple;
+    border: 1px solid purple;
+}
+
+.register-link,
+.login-link {
+    margin-top: 15px;
+}
+
+.register-link a,
+.login-link a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.register-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+    .login-container,
+    .register-container {
+        width: 80%;
+        max-width: 300px; /* Limit maximum width for smaller screens */
+        height: auto;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        padding: 15px;
+    }
+}

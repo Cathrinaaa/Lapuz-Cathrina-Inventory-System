@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Inventory System</title>
+    <link rel="stylesheet" href="css/cus.css">
+</head>
+<body>
+    <div class="fixed">
+        <h1>Inventory System</h1>
+        <div class="btn">
+            <a href="login.html">Log out</a>
+        </div>
+    </div>
+
+    <div class="fixed1">
+        <a href="dash.html" class="active">Dashboard</a><br><br>
+        <a href="product.html">Products</a><br><br>
+        <a href="del.html">Edit</a><br><br>
+        <a href="edit.html">Customer Info.</a><br><br>
+    </div>
+
+    <div class="total-container">
+        <div class="total-box">
+            <h2>Total Products</h2>
+            <p>100</p>
+        </div>
+        <div class="total-box">
+            <h2>Revenue</h2>
+            <p>P10,000</p>
+        </div>
+        <div class="total-box">
+            <h2>Orders</h2>
+            <p>50</p>
+        </div>
+        <div class="total-box">
+            <h2>Pending Customers</h2>
+        <table class="customer-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rossellah</td>
+                    <td>lhengiie@gmail.com</td>
+                    <td>123-456-7890</td>
+                    <td>Gaddani</td>
+                    <td>
+                        <button class="edit-button">Edit</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        </div>
+        <div class="total-box">
+            <h2>Product Stocks</h2>
+        <div class="stocks-list">
+            <!-- Product 1 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 1</span>
+                <span class="stock-count">10 in stock</span>
+            </div>
+            <!-- Product 2 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 2</span>
+                <span class="stock-count">5 in stock</span>
+            </div>
+            <!-- Product 3 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 3</span>
+                <span class="stock-count">8 in stock</span>
+            </div>
+            <!-- Product 4 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 4</span>
+                <span class="stock-count">15 in stock</span>
+            </div>
+            <!-- Product 5 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 5</span>
+                <span class="stock-count">20 in stock</span>
+            </div>
+            <!-- Product 6 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 6</span>
+                <span class="stock-count">12 in stock</span>
+            </div>
+            <!-- Product 7 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 7</span>
+                <span class="stock-count">18 in stock</span>
+            </div>
+            <!-- Product 8 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 8</span>
+                <span class="stock-count">6 in stock</span>
+            </div>
+            <!-- Product 9 -->
+            <div class="stock-item">
+                <span class="product-id">ID: 9</span>
+                <span class="stock-count">9 in stock</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals for editing products -->
+    <!-- Example: Only one modal shown for brevity -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="editForm">
+                <div class="input-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="input-group">
+                    <label for="productPrice">Product Price:</label>
+                    <input type="text" id="productPrice" name="productPrice" required>
+                </div>
+                <div class="input-group">
+                    <label for="productImage">Product Image URL:</label>
+                    <input type="text" id="productImage" name="productImage" required>
+                </div>
+                <div class="input-group">
+                    <label for="productId">Product ID:</label>
+                    <input type="text" id="productId" name="productId" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Modals for editing products -->
+    <!-- Example: Only one modal shown for brevity -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="editForm">
+                <div class="input-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="input-group">
+                    <label for="productPrice">Product Price:</label>
+                    <input type="text" id="productPrice" name="productPrice" required>
+                </div>
+                <div class="input-group">
+                    <label for="productImage">Product Image URL:</label>
+                    <input type="text" id="productImage" name="productImage" required>
+                </div>
+                <div class="input-group">
+                    <label for="productId">Product ID:</label>
+                    <input type="text" id="productId" name="productId" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include your scripts at the end -->
+    <script src="main.js"></script>
+</body>
+</html>

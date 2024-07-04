@@ -1,0 +1,500 @@
+/* General Styles */
+:root {
+    --main-bg-color: plum;
+    --primary-color: purple;
+    --secondary-color: pink;
+    --highlight-color: palevioletred;
+    --font-family: Arial, sans-serif;
+    --impact-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --gill-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+/* Button Styles */
+.btn {
+    font-family: var(--impact-font);
+    position: fixed;
+    right: 20px;
+    top: 3%;
+    z-index: 20; /* Ensure the button is on top */
+}
+
+.btn a {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 1px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.btn a:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Sidebar Styles */
+.fixed1 {
+    position: fixed;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    left: 0;
+    top: 12%;
+    background-color: var(--highlight-color);
+    width: 15%;
+    padding: 10px;
+    height: calc(100% - 60px); /* Adjusted height to account for header */
+    border: 2px solid var(--primary-color);
+    overflow: auto;
+    z-index: 5; /* Lower z-index to ensure it's below the header */
+}
+
+.fixed1 a {
+    color: var(--primary-color);
+    font-family: var(--impact-font);
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.fixed1 a.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.fixed1 a:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Header Styles */
+.fixed {
+    position: fixed;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 10%;
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+    z-index: 10; /* Higher z-index to ensure it's above the sidebar */
+}
+
+/* Content Styles */
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top edge */
+    margin-left: 20%;
+    margin-top: 7%;
+    padding-top: 20px; /* Add padding to create space between h2 and button */
+    position: relative; /* Ensure relative positioning for absolute button */
+}
+
+.text h2 {
+    font-size: xx-large;
+    margin-bottom: 0; /* Remove bottom margin for tighter alignment */
+    color: var(--primary-color);
+    font-family: var(--gill-font);
+}
+
+.add-button {
+    position: absolute; /* Position the button absolutely */
+    top: 35px; /* Align the button to the top edge of the .text container */
+    right: 25%; /* Align the button to the right edge of the .text container */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--impact-font);
+    font-size: 1.2rem;
+}
+
+.add-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 0;
+    margin-left: 20%;
+}
+
+.post {
+    flex: 1 1 calc(25% - 40px); /* Adjust to fit four items in a row, including the gap */
+    max-width: 300px;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border: 5px solid var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure images do not overflow */
+    position: relative; /* Ensure proper positioning of images */
+}
+
+.post img {
+    max-width: 100%; /* Ensure images scale within their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing below the image */
+    margin: 0 auto; /* Center images horizontally */
+}
+
+/* Summary Box Styles */
+.total-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Change to flex-end to align items to the right */
+    margin: 100px 250px;
+    padding: 0 5px;
+    width: 900%; /* Adjust width to fit the available space */
+    max-width: 1000px; /* Adjust maximum width */
+    box-sizing: border-box;
+}
+
+.total-box {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+    flex: 1 1 calc(33.333% - 20px); /* Adjust to fit three items in a row */
+    margin: 5px;
+    padding: 1px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.total-box:hover {
+    transform: translateY(-5px);
+}
+
+.total-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Reduced font size for better fit */
+}
+
+.total-box p {
+    font-size: 1.2rem; /* Reduced font size for better fit */
+}
+
+/* Pending Customers Styles */
+.pending-customers {
+    margin: 10px auto;
+    width: 50%;
+    max-width: 1000px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+}
+
+.pending-customers h2 {
+    color: var(--primary-color);
+    font-family: var(--gill-font);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styles */
+.customer-table {
+    width: 60%; /* Adjust width to fit the available space */
+    margin: 0 auto; /* Center the table horizontally with some top margin */
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+.customer-table th, .customer-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.customer-table th {
+    background-color: var(--secondary-color); /* Example header background color */
+    color: var(--primary-color); /* Example header text color */
+}
+
+.customer-table td {
+    background-color: #f2f2f2; /* Example row background color */
+    color: black; /* Example row text color */
+}
+
+.customer-table th:nth-child(1),
+.customer-table td:nth-child(1) {
+    min-width: 120px; /* Adjust width for Name column */
+}
+
+.customer-table th:nth-child(5),
+.customer-table td:nth-child(5) {
+    min-width: 120px; /* Adjust width for Actions column */
+}
+
+.edit-button, .delete-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px 5px;
+    font-family: var(--font-family);
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Stocks Section Styles */
+.stocks-section {
+    margin: 20px auto;
+    width: 80%; /* Adjust width to fit the available space */
+    max-width: 1000px; /* Set a maximum width */
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stocks-section h2 {
+    color: var(--primary-color);
+    font-family: var(--gill-font);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stocks-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.stock-item {
+    flex: 1 1 calc(25% - 40px); /* Adjust to fit four items in a row, including the gap */
+    max-width: 300px;
+    background-color: var(--highlight-color);
+    padding: 20px;
+    border: 5px solid var(--primary-color);
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.stock-item .product-id {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.stock-item .stock-count {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-family: var(--impact-font);
+}
+
+
+.edit-button, .delete-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px 5px;
+    font-family: var(--font-family);
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .fixed1 {
+        width: 300px;
+        font-size: 1.4rem;
+    }
+
+    .fixed1 a {
+        font-size: 1.4rem;
+    }
+
+    .post {
+        flex: 1 1 calc(33.333% - 40px); /* Adjust to fit three items in a row */
+    }
+}
+
+@media (max-width: 992px) {
+    .fixed1 {
+        width: 250px;
+        font-size: 1.2.rem;
+    }
+
+    .fixed1 a {
+        font-size: 1.2rem;
+    }
+
+    .post {
+        flex: 1 1 calc(50% - 40px); /* Adjust to fit two items in a row */
+    }
+}
+
+@media (max-width: 768px) {
+    .fixed1 {
+        width: 200px;
+        font-size: 1rem;
+    }
+
+    .fixed1 a {
+        font-size: 1rem;
+    }
+
+    .post {
+        flex: 1 1 calc(100% - 40px); /* Adjust to fit one item in a row */
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .fixed1 {
+        width: 100%;
+        top: 60px;
+        height: auto;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .fixed1 a {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .post {
+        flex: 1 1 calc(100% - 40px); /* Adjust to fit one item in a row */
+        max-width: 90%;
+        margin: 20px auto;
+        top: 60px;
+    }
+
+    .btn {
+        top: 80px;
+        right: 10px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    width: 60%; /* Adjust the width of the modal content */
+    max-width: 400px; /* Set a maximum width if needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    font-family: var(--gill-font);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border: 2px solid var(--primary-color);
+}
+
+.input-group button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--impact-font);
+}
+
+.input-group button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}

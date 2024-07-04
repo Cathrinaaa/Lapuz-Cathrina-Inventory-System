@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+
+    <link rel="stylesheet" href="css/cus.css">
+</head>
+<body>
+    <div class="text">
+    <h2>Available Products</h2>
+    <button class="add-button">Add</button></div>
+  <div class="post-container">
+     <div class="post" id="post1">
+        <img src="pictures/1.jpg">
+        <h2>Headband</h2>
+        <h3>P100.00</h3>
+        <h3>ID: 1</h3>
+     </div>
+     <div class="post" id="post2">
+        <img src="pictures/2.jpg">
+        <h2>Flower bracelet</h2>
+        <h3>P150.00</h3>
+        <h3>ID: 2</h3>
+     </div>
+     <div class="post" id="post3">
+        <img src="pictures/3.jpg" >
+        <h2>Diamond bracelet</h2>
+        <h3>P190.00</h3>
+        <h3>ID: 3</h3>
+     </div>
+     <div class="post" id="post4">
+        <img src="pictures/4.jpg">
+        <h2>White flower bracelet</h2>
+        <h3>P100.00</h3>
+        <h3>ID: 4</h3>
+     </div>
+     <div class="post" id="post5">
+        <img src="pictures/5.jpg" >
+        <h2>Purple perl bracelet</h2>
+        <h3>P170.00</h3>
+        <h3>ID: 5</h3>
+     </div>
+     <div class="post" id="post6">
+        <img src="pictures/6.jpg" >
+        <h2>Butterfly bracelet</h2>
+        <h3>P99.00</h3>
+        <h3>ID: 6</h3>
+     </div>
+     <div class="post" id="post7">
+        <img src="pictures/7.jpg" >
+        <h2>Heart bracelet</h2>
+        <h3>P200.00</h3>
+        <h3>ID: 7</h3>
+     </div>
+     <div class="post" id="post8">
+        <img src="pictures/8.jpg" >
+        <h2>Earings</h2>
+        <h3>P100.00</h3>
+        <h3>ID: 8</h3>
+     </div>
+     <div class="post" id="post9">
+        <img src="pictures/9.jpg" >
+        <h2>Square diamond bracelet</h2>
+        <h3>P250.00</h3>
+        <h3>ID: 9</h3>
+     </div>
+   </div>
+
+   <div class="fixed">
+    <h1>Inventory System</h1>
+    </div>
+
+    <div class="fixed1">
+        <a href="dash.html" >Dashboard</a><br \><br \>
+        <a href="product.html" class="active">Products</a><br \><br \>
+        <a href="del.html" >Edit</a><br \><br \>
+        <a href="edit.html" >Customer Info.</a><br \><br \>
+       
+        
+   </div>
+
+    <div class="btn">
+        <a href="login.html" >Log out</a>
+    </div>
+    
+    <div id="editModal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="editForm1">
+                <div class="input-group">
+                    <label for="productname1">Product Name:</label>
+                    <input type="text" id="postTitle1" name="postTitle" required>
+                </div>
+                <div class="input-group">
+                    <label for="postContent1">Product Price:</label>
+                    <textarea id="postContent1" name="postContent" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+   </div>
+
+   <div id="editModal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="editForm2">
+                <div class="input-group">
+                    <label for="postTitle2">Product Name:</label>
+                    <input type="text" id="postTitle2" name="postTitle" required>
+                </div>
+                <div class="input-group">
+                    <label for="postContent2">Product Price:</label>
+                    <textarea id="postContent2" name="postContent" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+   </div>
+</div>
+
+   <div id="editModal3" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm3">
+            <div class="input-group">
+                <label for="postTitle3">Product Name:</label>
+                <input type="text" id="postTitle3" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent3">Product Price:</label>
+                <textarea id="postContent3" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal4" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm4">
+            <div class="input-group">
+                <label for="postTitle4">Product Name:</label>
+                <input type="text" id="postTitle4" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent4">Product Price:</label>
+                <textarea id="postContent4" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal5" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm5">
+            <div class="input-group">
+                <label for="postTitle5">Product Name:</label>
+                <input type="text" id="postTitle5" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent5">Product Price:</label>
+                <textarea id="postContent5" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal6" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm6">
+            <div class="input-group">
+                <label for="postTitle6">Product Name:</label>
+                <input type="text" id="postTitle6" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent6">Product Price:</label>
+                <textarea id="postContent6" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal7" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm7">
+            <div class="input-group">
+                <label for="postTitle7">Product Name:</label>
+                <input type="text" id="postTitle7" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent7">Product Price:</label>
+                <textarea id="postContent7" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal8" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm8">
+            <div class="input-group">
+                <label for="postTitle8">Product Name:</label>
+                <input type="text" id="postTitle8" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent8">Product Price:</label>
+                <textarea id="postContent8" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="editModal9" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="editForm9">
+            <div class="input-group">
+                <label for="postTitle9">Product Name:</label>
+                <input type="text" id="postTitle9" name="postTitle" required>
+            </div>
+            <div class="input-group">
+                <label for="postContent9">Product Price:</label>
+                <textarea id="postContent9" name="postContent" rows="4" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="addModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Product</h2>
+        <form id="addForm">
+            <div class="input-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+            <div class="input-group">
+                <label for="productPrice">Product Price:</label>
+                <input type="text" id="productPrice" name="productPrice" required>
+            </div>
+            <div class="input-group">
+                <label for="productImage">Product Image URL:</label>
+                <input type="text" id="productImage" name="productImage" required>
+            </div>
+            <div class="input-group">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" name="productId" required>
+            </div>
+            <div class="input-group">
+                <button type="submit">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    <script src="main.js"></script>
+  
+
+  
+    
+</body>
+</html>

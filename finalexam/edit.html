@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="css/cus.css">
+</head>
+<body>
+    <div class="fixed">
+        <h1>Inventory System</h1>
+    </div>
+
+    <div class="fixed1" id="sidebar">
+        <a href="dash.html">Dashboard</a><br><br>
+        <a href="product.html">Products</a><br><br>
+        <a href="del.html">Edit</a><br><br>
+        <a href="edit.html" class="active">Customer Info.</a><br><br>
+    </div>
+
+    <div class="btn">
+        <a href="login.html">Log out</a>
+    </div>
+
+    <div class="text">
+        <h2>Customers Info.</h2>
+        <button class="add-button">Add</button>
+    </div>
+
+    <table class="customer-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Product</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rossellah</td>
+                <td>9</td>
+                <td>+1234567890</td>
+                <td>Gaddani</td>
+                <td>Pending</td>
+                <td>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </td>
+            </tr>
+            <!-- Add more rows for each customer -->
+        </tbody>
+    </table>
+
+    <!-- Modal for Add Customer -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Customer</h2>
+            <form id="addForm">
+                <div class="input-group">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                </div>
+                <div class="input-group">
+                    <label for="productName">Product Id:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="input-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="input-group">
+                    <label for="customerAddress">Address:</label>
+                    <textarea id="customerAddress" name="customerAddress" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Edit Customer (similar structure as Add) -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Customer</h2>
+            <form id="editForm">
+                <div class="input-group">
+                    <label for="editCustomerName">Name:</label>
+                    <input type="text" id="editCustomerName" name="editCustomerName" required>
+                </div>
+                <div class="input-group">
+                    <label for="editProductName">Product Id:</label>
+                    <input type="text" id="editProductName" name="editProductName" required>
+                </div>
+                <div class="input-group">
+                    <label for="editPhoneNumber">Phone Number:</label>
+                    <input type="text" id="editPhoneNumber" name="editPhoneNumber" required>
+                </div>
+                <div class="input-group">
+                    <label for="editCustomerAddress">Address:</label>
+                    <textarea id="editCustomerAddress" name="editCustomerAddress" rows="4" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="editStatus">Status:</label>
+                    <select id="editStatus" name="editStatus" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('#sidebar a');
+        
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Remove the 'active' class from all links
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add the 'active' class to the clicked link
+                    this.classList.add('active');
+                });
+            });
+
+            // Modal references
+            const addModal = document.getElementById('addModal');
+            const editModal = document.getElementById('editModal');
+            const addBtn = document.querySelector('.add-button');
+            const closeBtns = document.querySelectorAll('.close');
+            const addForm = document.getElementById('addForm');
+            const editForm = document.getElementById('editForm');
+
+            // Open Add Modal on button click
+            addBtn.addEventListener('click', function() {
+                addModal.style.display = 'block';
+            });
+
+            // Close Modals on close button click
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    addModal.style.display = 'none';
+                    editModal.style.display = 'none';
+                });
+            });
+
+            // Close Modals on outside click
+            window.addEventListener('click', function(event) {
+                if (event.target == addModal) {
+                    addModal.style.display = 'none';
+                }
+                if (event.target == editModal) {
+                    editModal.style.display = 'none';
+                }
+            });
+
+            // Handle Add Form submission
+            addForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Fetch form data
+                const customerName = addForm.elements.customerName.value;
+                const productName = addForm.elements.productName.value;
+                const phoneNumber = addForm.elements.phoneNumber.value;
+                const customerAddress = addForm.elements.customerAddress.value;
+                const status = addForm.elements.status.value;
+
+                // Add new row to the table (example row)
+                const tbody = document.querySelector('.customer-table tbody');
+                const newRow = `
+                    <tr>
+                        <td>${customerName}</td>
+                        <td>${productName}</td>
+                        <td>${phoneNumber}</td>
+                        <td>${customerAddress}</td>
+                        <td>${status}</td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += newRow;
+
+                // Clear form fields
+                addForm.reset();
+                // Close the Add modal after adding
+                addModal.style.display = 'none';
+            });
+
+            // Handle Edit Form submission (similar to Add Form handling)
+            editForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Update existing row in the table (example update)
+                const editCustomerName = editForm.elements.editCustomerName.value;
+                const editProductName = editForm.elements.editProductName.value;
+                const editPhoneNumber = editForm.elements.editPhoneNumber.value;
+                const editCustomerAddress = editForm.elements.editCustomerAddress.value;
+                const editStatus = editForm.elements.editStatus.value;
+
+                // Implement your logic to update the existing row in the table
+                // This is just an example, you need to modify based on your backend or storage mechanism
+                // Here, we would typically send these values to the server to update the data
+
+                // Clear form fields
+                editForm.reset();
+                // Close the Edit modal after saving changes
+                editModal.style.display = 'none';
+            });
+
+            // Edit button click event listener to populate Edit Modal
+            const editButtons = document.querySelectorAll('.edit-button');
+            editButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Fetch data from the corresponding row in the table and populate the Edit Modal form
+                    const row = button.closest('tr');
+                    const cells = row.querySelectorAll('td');
+
+                    // Example: Populate edit form with existing data
+                    editForm.elements.editCustomerName.value = cells[0].textContent;
+                    editForm.elements.editProductName.value = cells[1].textContent;
+                    editForm.elements.editPhoneNumber.value = cells[2].textContent;
+                    editForm.elements.editCustomerAddress.value = cells[3].textContent;
+                    editForm.elements.editStatus.value = cells[4].textContent;
+
+                    // Show the Edit modal
+                    editModal.style.display = 'block';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
